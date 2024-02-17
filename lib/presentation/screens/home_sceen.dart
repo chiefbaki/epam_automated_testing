@@ -1,5 +1,4 @@
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/presentation/screens/category_screen.dart';
 import 'package:travel_app/presentation/screens/favourite_screen.dart';
