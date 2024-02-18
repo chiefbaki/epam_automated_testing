@@ -1,50 +1,76 @@
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
+import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/presentation/screens/category_screen.dart';
-import 'package:travel_app/presentation/screens/favourite_screen.dart';
 
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key, required this.title}) : super(key: key);
+
+  final String title;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-    int currentIndex = 0;
+class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
+  int _tabIndex = 1;
+  int get tabIndex => _tabIndex;
+  set tabIndex(int v) {
+    _tabIndex = v;
+    setState(() {});
+  }
 
-    final List<String> title = [
-        "Favourite",
-        "Wallet",
-        "Home",
-    ];
+  late PageController pageController;
 
-    final List<IconData> icons = [
-        Icons.favorite, 
-        Icons.wallet_giftcard_sharp, 
-        Icons.home, 
-    ];
-
-    final List pages = [
-      HomeScreen(),
-      FavouriteScreen(),
-      CategoryScreen()
-    ];
+  @override
+  void initState() {
+    super.initState();
+    pageController = PageController(initialPage: _tabIndex);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-  bottomNavigationBar: CurvedNavigationBar(
-    backgroundColor: Colors.blueAccent,
-    items: [
-    ],
-    onTap: (index) {
-      //Handle button tap
-    },
-  ),
-  body: Container(color: Colors.blueAccent),
-);
-  
+      extendBody: true,
+      bottomNavigationBar: CircleNavBar(
+        activeIcons: const [
+          Icon(Icons.person, color: Colors.deepPurple),
+          Icon(Icons.home, color: Colors.deepPurple),
+          Icon(Icons.favorite, color: Colors.deepPurple),
+        ],
+        inactiveIcons: const [
+          Text("My"),
+          Text("Home"),
+          Text("Like"),
+        ],
+        color: Colors.white,
+        height: 60,
+        circleWidth: 60,
+        activeIndex: tabIndex,
+        onTap: (index) {
+          tabIndex = index;
+          pageController.jumpToPage(tabIndex);
+        },
+        padding: const EdgeInsets.only(left: 16, right: 16, bottom: 20),
+        cornerRadius: const BorderRadius.only(
+          topLeft: Radius.circular(8),
+          topRight: Radius.circular(8),
+          bottomRight: Radius.circular(24),
+          bottomLeft: Radius.circular(24),
+        ),
+        shadowColor: Colors.deepPurple,
+        elevation: 10,
+      ),
+      body: PageView(
+        controller: pageController,
+        onPageChanged: (v) {
+          tabIndex = v;
+        },
+        children: [
+          Container(width: double.infinity, height: double.infinity, color: Colors.red),
+          Container(width: double.infinity, height: double.infinity, color: Colors.green),
+          Container(width: double.infinity, height: double.infinity, color: Colors.blue),
+        ],
+      ),
+    );
   }
 }
