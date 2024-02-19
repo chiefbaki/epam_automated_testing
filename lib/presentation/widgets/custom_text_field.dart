@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/core/consts/theme/app_colors.dart';
-import 'package:travel_app/core/consts/theme/app_fonts.dart';
+import 'package:travel_app/utils/consts/themes/app_colors.dart';
+import 'package:travel_app/utils/consts/themes/app_fonts.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
