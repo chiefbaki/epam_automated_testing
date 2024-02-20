@@ -38,6 +38,8 @@ dependencies:
   spider: ^4.2.2
   circle_nav_bar: ^2.0.1+1
   flutter_svg: ^2.0.9
+  banner_carousel: ^1.2.1
+  
   
   
 

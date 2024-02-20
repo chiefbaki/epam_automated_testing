@@ -4,6 +4,9 @@ abstract class AppColors {
   static const Color white = Colors.white;
   static const Color black = Colors.black;
   static const Color stroke = Color(0xFFDADADA);
+  static const Color fcfcfc = Color(0xFFFCFCFC);
+  static const Color green = Color(0xFF539B96);
+  
   
   static const List<Color> gradientGreen = [
     Color(0XFF7EA3A1),

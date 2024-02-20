@@ -1,6 +1,7 @@
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:travel_app/presentation/screens/favourite_screen.dart';
 import 'package:travel_app/presentation/screens/home_screen.dart';
 import 'package:travel_app/utils/consts/themes/app_colors.dart';
 import 'package:travel_app/utils/resources/resources.dart';
@@ -76,10 +77,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
         },
         children: [
           const HomeScreen(),
-          Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: Colors.green),
+          FavouriteScreen(),
           Container(
               width: double.infinity,
               height: double.infinity,
