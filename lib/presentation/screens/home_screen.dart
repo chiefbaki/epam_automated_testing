@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 2,
-                    height: 200,
+                    height: 150,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       physics: const AlwaysScrollableScrollPhysics(),
