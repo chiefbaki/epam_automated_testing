@@ -11,6 +11,7 @@ class Images {
   static const String shop = 'assets/imgs/Shop.svg';
   static const String shop2 = 'assets/imgs/Shop2.png';
   static const String vector = 'assets/imgs/Vector.svg';
+  static const String avatar = 'assets/imgs/avatar.png';
   static const String back = 'assets/imgs/back.png';
   static const String cardBack = 'assets/imgs/cardBack.png';
   static const String content1 = 'assets/imgs/content1.png';
@@ -19,6 +20,17 @@ class Images {
   static const String image36 = 'assets/imgs/image_36.png';
   static const String image50 = 'assets/imgs/image_50.png';
   static const String image51 = 'assets/imgs/image_51.png';
+  static const String item1 = 'assets/imgs/item1.png';
+  static const String item10 = 'assets/imgs/item10.png';
+  static const String item11 = 'assets/imgs/item11.png';
+  static const String item2 = 'assets/imgs/item2.png';
+  static const String item3 = 'assets/imgs/item3.png';
+  static const String item4 = 'assets/imgs/item4.png';
+  static const String item5 = 'assets/imgs/item5.png';
+  static const String item6 = 'assets/imgs/item6.png';
+  static const String item7 = 'assets/imgs/item7.png';
+  static const String item8 = 'assets/imgs/item8.png';
+  static const String item9 = 'assets/imgs/item9.png';
   static const String mdiHeart = 'assets/imgs/mdi_heart.svg';
   static const String mdiHeart2 = 'assets/imgs/mdi_heart2.png';
   static const String notification = 'assets/imgs/notification.png';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/presentation/screens/home_screen.dart';
 import 'package:travel_app/presentation/widgets/custom_bottomnav.dart';
+import 'package:travel_app/utils/consts/themes/app_colors.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,9 +10,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: "SF Pro"
+        useMaterial3: false,
+        fontFamily: "SF Pro",
+        scaffoldBackgroundColor: AppColors.scaffoldBgColor,
+        appBarTheme: const AppBarTheme(
+          color: AppColors.scaffoldBgColor
+        ),
       ),
-      home: CustomBottomNavBar(title: "Home",),
+      home: const CustomBottomNavBar(title: "Home",),
     );
   }
 }

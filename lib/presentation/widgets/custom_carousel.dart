@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 
 class CustomCarousel extends StatelessWidget {
   final List<Widget> widgets;
-  const CustomCarousel({super.key, required this.widgets});
+  final double width;
+  const CustomCarousel({super.key, required this.widgets, this.width = 200});
 
   @override
   Widget build(BuildContext context) {
     return BannerCarousel(
-        animation: true,
-        height: 200,
+        animation: false,
+        height: width,
         width: double.infinity,
         viewportFraction: 1,
         showIndicator: true,
