@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/utils/resources/resources.dart';
-import 'package:travel_app/features/favourite_page/presentation/pages/favourite_page.dart';
-import 'package:travel_app/features/home_page/presentation/pages/home_page.dart';
+import 'package:travel_app/features/favourite/presentation/pages/favourite_page.dart';
+import 'package:travel_app/features/home/presentation/pages/home_page.dart';
 
 
 class CustomBottomNavBar extends StatefulWidget {

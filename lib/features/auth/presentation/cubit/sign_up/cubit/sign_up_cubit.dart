@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:travel_app/features/auth_page/data/repositories/firebase_services.dart';
+import 'package:travel_app/features/auth/data/repositories/firebase_services.dart';
 part 'sign_up_state.dart';
 
 

@@ -4,9 +4,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
 import 'package:travel_app/core/utils/consts/consts.dart';
-import 'package:travel_app/features/auth_page/presentation/cubit/sign_up/cubit/sign_up_cubit.dart';
-import 'package:travel_app/features/auth_page/presentation/pages/login_page.dart';
-import 'package:travel_app/features/auth_page/presentation/pages/reset_pass_page.dart';
+import 'package:travel_app/features/auth/presentation/cubit/sign_up/cubit/sign_up_cubit.dart';
+import 'package:travel_app/features/auth/presentation/pages/login_page.dart';
+import 'package:travel_app/features/auth/presentation/pages/reset_pass_page.dart';
 import 'package:travel_app/features/widgets/back_btn.dart';
 import 'package:travel_app/features/widgets/custom_bottomnav.dart';
 import 'package:travel_app/features/widgets/custom_elevated_btn.dart';
@@ -29,6 +29,20 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   void initState() {
     super.initState();
+    confirmPassword.addListener(() {
+      checkPass();
+    });
+    password.addListener(() {
+      checkPass();
+    });
+  }
+
+  bool switcher = false;
+
+  void checkPass() {
+    setState(() {
+      switcher = password.text == confirmPassword.text;
+    });
   }
 
   void routing() {
@@ -187,9 +201,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                             Center(
                               child: CustomElevatedBtn(
-                                onPressed: password.text != confirmPassword.text
-                                    ? null
-                                    : () async {
+                                onPressed: switcher
+                                    ? () async {
                                         BlocProvider.of<SignUpCubit>(context)
                                             .signUp(
                                                 email: email.text,
@@ -205,8 +218,10 @@ class _RegisterPageState extends State<RegisterPage> {
                                             Consts.email, email.text);
                                         await prefs.setString(
                                             Consts.password, firstName.text);
-                                        await prefs.setBool(Consts.isLogined, true);
-                                      },
+                                        await prefs.setBool(
+                                            Consts.isLogined, true);
+                                      }
+                                    : null,
                                 title: "Sign up",
                               ),
                             ),

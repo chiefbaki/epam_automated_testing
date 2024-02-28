@@ -6,7 +6,6 @@ import 'package:travel_app/features/widgets/carousel_card.dart';
 import 'package:travel_app/features/widgets/custom_carousel.dart';
 import 'package:travel_app/features/widgets/search_text_field.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -31,24 +30,18 @@ class _HomePageState extends State<HomePage> {
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
+          physics: const AlwaysScrollableScrollPhysics(),
           child: Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                          colors: AppColors.cardGradientColor),
-                      borderRadius: BorderRadius.circular(15),
-                      image: const DecorationImage(
-                        image: AssetImage(
-                          Images.cardBack,
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  Container(
+                    width: 390,
+                    height: 240,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(image: AssetImage(Images.card))),
                     child: Padding(
                       padding: const EdgeInsets.all(30.0),
                       child: Column(
@@ -125,6 +118,9 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     "The latest",
                     style: AppFonts.s14w700,
+                  ),
+                  const SizedBox(
+                    height: 17,
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 2,

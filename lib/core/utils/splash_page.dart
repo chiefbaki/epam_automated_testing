@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
 import 'package:travel_app/core/utils/consts/consts.dart';
-import 'package:travel_app/features/auth_page/presentation/pages/login_page.dart';
+import 'package:travel_app/features/auth/presentation/pages/login_page.dart';
 import 'package:travel_app/features/widgets/custom_bottomnav.dart';
 
 class SplashPage extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:travel_app/features/auth_page/data/repositories/firebase_services.dart';
+import 'package:travel_app/features/auth/data/repositories/firebase_services.dart';
 
 part 'reset_pass_state.dart';
 

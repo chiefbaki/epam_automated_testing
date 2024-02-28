@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:travel_app/features/auth_page/data/repositories/firebase_services.dart';
-import 'package:travel_app/features/auth_page/presentation/cubit/sign_in/sign_in_state.dart';
+import 'package:travel_app/features/auth/data/repositories/firebase_services.dart';
+import 'package:travel_app/features/auth/presentation/cubit/sign_in/sign_in_state.dart';
 
 
 class SignInCubit extends Cubit<SignInState> {

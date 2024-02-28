@@ -5,7 +5,6 @@ class Images {
 
   static const String home = 'assets/imgs/Home.png';
   static const String home1 = 'assets/imgs/Home1.png';
-  static const String card = 'assets/imgs/card.png';
   static const String menu = 'assets/imgs/Menu.svg';
   static const String menu2 = 'assets/imgs/Menu2.png';
   static const String qrCode = 'assets/imgs/QR_Code.png';
@@ -14,6 +13,7 @@ class Images {
   static const String vector = 'assets/imgs/Vector.svg';
   static const String avatar = 'assets/imgs/avatar.png';
   static const String back = 'assets/imgs/back.png';
+  static const String card = 'assets/imgs/card.png';
   static const String cardBack = 'assets/imgs/cardBack.png';
   static const String content1 = 'assets/imgs/content1.png';
   static const String content2 = 'assets/imgs/content2.png';
