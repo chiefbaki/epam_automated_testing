@@ -17,6 +17,11 @@ abstract class AppFonts {
       TextStyle(fontSize: 10, fontWeight: FontWeight.w700);
   static const TextStyle s10w600 =
       TextStyle(fontSize: 10, fontWeight: FontWeight.w600);
+
+  static const TextStyle s6w300 =
+      TextStyle(fontSize: 6, fontWeight: FontWeight.w300);
+  static const TextStyle s10w500 =
+      TextStyle(fontSize: 10, fontWeight: FontWeight.w500);
   static const TextStyle s35w400 =
       TextStyle(fontSize: 35, fontWeight: FontWeight.w400);
   static const TextStyle s25w400 =
@@ -25,7 +30,6 @@ abstract class AppFonts {
       TextStyle(fontSize: 8, fontWeight: FontWeight.w600);
   static const TextStyle s6w600 =
       TextStyle(fontSize: 6, fontWeight: FontWeight.w600);
-
-  static const TextStyle s10w500 =
-      TextStyle(fontSize: 10, fontWeight: FontWeight.w500);
+  static const TextStyle s7w500 =
+      TextStyle(fontSize: 7, fontWeight: FontWeight.w500);
 }

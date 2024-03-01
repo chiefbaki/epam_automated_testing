@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:travel_app/utils/resources/resources.dart';
+import 'package:travel_app/core/utils/resources/resources.dart';
 
 void main() {
   test('images assets test', () {
@@ -18,11 +18,22 @@ void main() {
     expect(File(Images.card).existsSync(), isTrue);
     expect(File(Images.cardBack).existsSync(), isTrue);
     expect(File(Images.content1).existsSync(), isTrue);
+    expect(File(Images.content10).existsSync(), isTrue);
     expect(File(Images.content2).existsSync(), isTrue);
     expect(File(Images.content3).existsSync(), isTrue);
+    expect(File(Images.content4).existsSync(), isTrue);
+    expect(File(Images.content5).existsSync(), isTrue);
+    expect(File(Images.content6).existsSync(), isTrue);
+    expect(File(Images.content7).existsSync(), isTrue);
+    expect(File(Images.content8).existsSync(), isTrue);
+    expect(File(Images.headphones1).existsSync(), isTrue);
+    expect(File(Images.headphones2).existsSync(), isTrue);
+    expect(File(Images.headphones3).existsSync(), isTrue);
+    expect(File(Images.headphones4).existsSync(), isTrue);
     expect(File(Images.image36).existsSync(), isTrue);
     expect(File(Images.image50).existsSync(), isTrue);
     expect(File(Images.image51).existsSync(), isTrue);
+    expect(File(Images.item).existsSync(), isTrue);
     expect(File(Images.item1).existsSync(), isTrue);
     expect(File(Images.item10).existsSync(), isTrue);
     expect(File(Images.item11).existsSync(), isTrue);
@@ -37,6 +48,12 @@ void main() {
     expect(File(Images.mdiHeart).existsSync(), isTrue);
     expect(File(Images.mdiHeart2).existsSync(), isTrue);
     expect(File(Images.notification).existsSync(), isTrue);
+    expect(File(Images.product1).existsSync(), isTrue);
+    expect(File(Images.product2).existsSync(), isTrue);
+    expect(File(Images.product3).existsSync(), isTrue);
+    expect(File(Images.product4).existsSync(), isTrue);
+    expect(File(Images.product5).existsSync(), isTrue);
+    expect(File(Images.product6).existsSync(), isTrue);
     expect(File(Images.scan).existsSync(), isTrue);
     expect(File(Images.search).existsSync(), isTrue);
   });

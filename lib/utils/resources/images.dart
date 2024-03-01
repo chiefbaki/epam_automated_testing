@@ -16,8 +16,14 @@ class Images {
   static const String card = 'assets/imgs/card.png';
   static const String cardBack = 'assets/imgs/cardBack.png';
   static const String content1 = 'assets/imgs/content1.png';
+  static const String content10 = 'assets/imgs/content10.png';
   static const String content2 = 'assets/imgs/content2.png';
   static const String content3 = 'assets/imgs/content3.png';
+  static const String content4 = 'assets/imgs/content4.png';
+  static const String content5 = 'assets/imgs/content5.png';
+  static const String content6 = 'assets/imgs/content6.png';
+  static const String content7 = 'assets/imgs/content7.png';
+  static const String content8 = 'assets/imgs/content8.png';
   static const String image36 = 'assets/imgs/image_36.png';
   static const String image50 = 'assets/imgs/image_50.png';
   static const String image51 = 'assets/imgs/image_51.png';

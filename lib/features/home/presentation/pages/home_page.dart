@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
@@ -6,6 +7,8 @@ import 'package:travel_app/features/widgets/carousel_card.dart';
 import 'package:travel_app/features/widgets/custom_carousel.dart';
 import 'package:travel_app/features/widgets/search_text_field.dart';
 
+
+@RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -14,6 +17,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<String> imgs = [
+    Images.content1,
+    Images.content2,
+    Images.content3,
+    Images.content4,
+    Images.content5,
+    Images.content6,
+    Images.content7,
+    Images.content8,
+    Images.content10,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -125,24 +140,18 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 2,
                     height: 150,
-                    child: ListView(
+                    child: ListView.separated(
+                      itemCount: imgs.length,
                       scrollDirection: Axis.horizontal,
                       physics: const AlwaysScrollableScrollPhysics(),
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(
-                              Images.content1,
-                              width: 152,
-                              height: 190,
-                            ),
-                            Image.asset(Images.content2,
-                                width: 152, height: 190),
-                            Image.asset(Images.content3,
-                                width: 152, height: 190),
-                          ],
-                        )
-                      ],
+                      itemBuilder: (context, index) {
+                        return Image.asset(imgs[index]);
+                      },
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(
+                          width: 6,
+                        );
+                      },
                     ),
                   )
                 ],

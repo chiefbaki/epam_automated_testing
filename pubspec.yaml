@@ -44,6 +44,10 @@ dependencies:
   flutter_bloc: ^8.1.4
   shared_preferences: ^2.2.2
   another_flutter_splash_screen: ^1.2.0
+  auto_route: ^7.8.4
+  build_runner: ^2.4.8
+  auto_route_generator: ^7.3.2
+  provider: ^6.1.2
   
   
   
