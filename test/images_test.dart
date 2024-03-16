@@ -45,6 +45,16 @@ void main() {
     expect(File(Images.item7).existsSync(), isTrue);
     expect(File(Images.item8).existsSync(), isTrue);
     expect(File(Images.item9).existsSync(), isTrue);
+    expect(File(Images.location).existsSync(), isTrue);
+    expect(File(Images.location1).existsSync(), isTrue);
+    expect(File(Images.location2).existsSync(), isTrue);
+    expect(File(Images.location3).existsSync(), isTrue);
+    expect(File(Images.location4).existsSync(), isTrue);
+    expect(File(Images.location5).existsSync(), isTrue);
+    expect(File(Images.location6).existsSync(), isTrue);
+    expect(File(Images.location7).existsSync(), isTrue);
+    expect(File(Images.location8).existsSync(), isTrue);
+    expect(File(Images.location9).existsSync(), isTrue);
     expect(File(Images.mdiHeart).existsSync(), isTrue);
     expect(File(Images.mdiHeart2).existsSync(), isTrue);
     expect(File(Images.notification).existsSync(), isTrue);

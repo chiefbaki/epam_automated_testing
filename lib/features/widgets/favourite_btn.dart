@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:travel_app/features/shopping/presentation/provider/favourite_provider.dart';
 
 class FavouriteBtn extends StatefulWidget {
-  
   const FavouriteBtn({super.key});
 
   @override
@@ -13,19 +10,16 @@ class FavouriteBtn extends StatefulWidget {
 class _FavouriteBtnState extends State<FavouriteBtn> {
   @override
   Widget build(BuildContext context) {
-    final vm = Provider.of<FavouriteProvider>(context);
+    // final vm = Provider.of<FavouriteProvider>(context);
     return SizedBox(
       height: 5,
       child: IconButton(
-          onPressed: (){
-            vm.changeState();
+          onPressed: () {
             debugPrint("work");
-            setState(() {
-              
-            });
+            setState(() {});
           },
           icon: Icon(
-            vm.changeIcon(),
+            Icons.favorite,
             size: 33,
           )),
     );

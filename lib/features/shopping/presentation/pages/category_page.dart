@@ -85,7 +85,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SearchTextField(controller: TextEditingController()),
+                SearchTextField(controller: TextEditingController(), hintText: "Search...",),
                 const SizedBox(
                   height: 12,
                 ),

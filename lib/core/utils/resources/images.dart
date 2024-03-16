@@ -43,6 +43,16 @@ class Images {
   static const String item7 = 'assets/imgs/item7.png';
   static const String item8 = 'assets/imgs/item8.png';
   static const String item9 = 'assets/imgs/item9.png';
+  static const String location = 'assets/imgs/location.png';
+  static const String location1 = 'assets/imgs/location1.png';
+  static const String location2 = 'assets/imgs/location2.png';
+  static const String location3 = 'assets/imgs/location3.png';
+  static const String location4 = 'assets/imgs/location4.png';
+  static const String location5 = 'assets/imgs/location5.png';
+  static const String location6 = 'assets/imgs/location6.png';
+  static const String location7 = 'assets/imgs/location7.png';
+  static const String location8 = 'assets/imgs/location8.png';
+  static const String location9 = 'assets/imgs/location9.png';
   static const String mdiHeart = 'assets/imgs/mdi_heart.svg';
   static const String mdiHeart2 = 'assets/imgs/mdi_heart2.png';
   static const String notification = 'assets/imgs/notification.png';

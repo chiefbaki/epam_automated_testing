@@ -7,9 +7,11 @@ import 'package:travel_app/features/widgets/scan_btn.dart';
 
 class SearchTextField extends StatelessWidget {
   final TextEditingController controller;
+  final String hintText;
   const SearchTextField({
     super.key,
-    required this.controller
+    required this.controller,
+    required this.hintText
   });
 
   @override
@@ -22,7 +24,7 @@ class SearchTextField extends StatelessWidget {
         style: AppFonts.s12w400,
         decoration: InputDecoration(
             contentPadding: const EdgeInsets.all(5),
-            hintText: "Search...",
+            hintText: hintText,
             prefixIcon: Image.asset(Images.search),
             suffixIcon: ScanBtn(
               onPressed: () {},

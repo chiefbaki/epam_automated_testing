@@ -5,7 +5,6 @@ import 'package:travel_app/core/config/themes/app_fonts.dart';
 import 'package:travel_app/features/auth/presentation/cubit/reset_pass/reset_pass_cubit.dart';
 import 'package:travel_app/features/auth/presentation/pages/login_page.dart';
 import 'package:travel_app/features/widgets/back_btn.dart';
-import 'package:travel_app/features/widgets/custom_bottomnav.dart';
 import 'package:travel_app/features/widgets/custom_elevated_btn.dart';
 import 'package:travel_app/features/widgets/custom_text_field.dart';
 

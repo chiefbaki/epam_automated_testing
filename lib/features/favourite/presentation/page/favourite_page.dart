@@ -2,8 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/features/widgets/search_text_field.dart';
 
-
-
 @RoutePage()
 class FavouritePage extends StatefulWidget {
   const FavouritePage({super.key});
@@ -15,8 +13,6 @@ class FavouritePage extends StatefulWidget {
 class _FavouritePageState extends State<FavouritePage> {
   @override
   Widget build(BuildContext context) {
-    
-
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -24,11 +20,13 @@ class _FavouritePageState extends State<FavouritePage> {
             padding: const EdgeInsets.symmetric(horizontal: 49),
             child: Column(
               children: [
-                SearchTextField(controller: TextEditingController()),
+                SearchTextField(
+                  controller: TextEditingController(),
+                  hintText: "Choose a country or region",
+                ),
                 const SizedBox(
                   height: 12,
                 ),
-               
               ],
             ),
           ),

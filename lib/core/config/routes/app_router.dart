@@ -11,17 +11,17 @@ class AppRouter extends $AppRouter {
           children: [
             AutoRoute(
               page: HomeRoute.page,
-              initial: true,
             ),
             AutoRoute(
               page: ShoppingRoute.page,
-              
             ),
             AutoRoute(
               page: FavouriteRoute.page,
+
             ),
             AutoRoute(
               page: LocationRoute.page,
+              initial: true,
             ),
           ],
         ),

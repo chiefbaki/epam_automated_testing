@@ -101,6 +101,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SearchTextField(
                     controller: TextEditingController(),
+                    hintText: "Search...",
                   ),
                   const SizedBox(
                     height: 12,

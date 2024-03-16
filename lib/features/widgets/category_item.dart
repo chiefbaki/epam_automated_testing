@@ -1,11 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
-import 'package:travel_app/features/shopping/presentation/provider/favourite_provider.dart';
-import 'package:travel_app/features/widgets/favourite_btn.dart';
 
 class CategoryItem extends StatefulWidget {
   final String name;
@@ -25,9 +20,9 @@ class CategoryItem extends StatefulWidget {
 }
 
 class _CategoryItemState extends State<CategoryItem> {
+  bool isTapped = false;
   @override
   Widget build(BuildContext context) {
-    final vm = Provider.of<FavouriteProvider>(context);
     return Container(
       width: 160,
       height: MediaQuery.of(context).size.height * 0.188,
@@ -90,7 +85,15 @@ class _CategoryItemState extends State<CategoryItem> {
                     ),
                   ],
                 ),
-                const FavouriteBtn()
+                IconButton(
+                    onPressed: () {
+                      isTapped = !isTapped;
+                      setState(() {});
+                    },
+                    icon: Icon(
+                      isTapped ? Icons.favorite : Icons.favorite_border,
+                      size: 13,
+                    )),
               ],
             )
           ],
