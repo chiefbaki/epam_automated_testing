@@ -1,8 +1,6 @@
 import 'dart:async';
-
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
@@ -10,6 +8,7 @@ import 'package:travel_app/core/utils/resources/resources.dart';
 import 'package:travel_app/features/location/data/location_dto.dart';
 import 'package:travel_app/features/widgets/location_card.dart';
 import 'package:travel_app/features/widgets/search_text_field.dart';
+
 
 @RoutePage()
 class LocationPage extends StatelessWidget {

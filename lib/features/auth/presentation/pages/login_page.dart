@@ -1,16 +1,18 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/core/config/routes/app_router.gr.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
 import 'package:travel_app/features/auth/presentation/cubit/sign_in/sign_in_cubit.dart';
 import 'package:travel_app/features/auth/presentation/cubit/sign_in/sign_in_state.dart';
-import 'package:travel_app/features/auth/presentation/pages/register_page.dart';
-import 'package:travel_app/features/auth/presentation/pages/reset_pass_page.dart';
-import 'package:travel_app/features/widgets/custom_bottomnav.dart';
 import 'package:travel_app/features/widgets/custom_elevated_btn.dart';
 import 'package:travel_app/features/widgets/custom_text_btn.dart';
 import 'package:travel_app/features/widgets/custom_text_field.dart';
 
+
+
+@RoutePage()
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -18,12 +20,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController email = TextEditingController();
     final TextEditingController password = TextEditingController();
-    final MaterialPageRoute registerRoute =
-        MaterialPageRoute(builder: (context) => const RegisterPage());
-    final MaterialPageRoute homeRoute =
-        MaterialPageRoute(builder: (context) => const CustomBottomNavBar());
-    final MaterialPageRoute resetRoute =
-        MaterialPageRoute(builder: (context) => const ResetPassPage());
+
+    
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -59,7 +57,9 @@ class LoginPage extends StatelessWidget {
                             debugPrint(state.toString());
                           } else if (state is SignInSuccess) {
                             debugPrint(state.toString());
-                            Navigator.push(context, homeRoute);
+                            context.router.push(const DashboardRoute());
+
+                            
                           } else if (state is SignInError) {
                             debugPrint(state.toString());
                           }
@@ -103,6 +103,7 @@ class LoginPage extends StatelessWidget {
                                   BlocProvider.of<SignInCubit>(context).signIn(
                                       email: email.text,
                                       password: password.text);
+                                      
                                 },
                                 title: "Sign in",
                               ),
@@ -112,7 +113,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       CustomTextBtn(
                         onPressed: () {
-                          Navigator.push(context, registerRoute);
+                          context.router.push(const RegisterRoute());
                         },
                         title: "Sign up",
                         textStyle:
@@ -120,7 +121,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       CustomTextBtn(
                         onPressed: () {
-                          Navigator.push(context, resetRoute);
+                          context.router.push(const ResetPassRoute());
                         },
                         title: "Forgot password?",
                         textStyle: AppFonts.s13w500

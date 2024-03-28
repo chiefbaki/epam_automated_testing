@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
 import 'package:travel_app/features/widgets/custom_elevated_btn.dart';
 
 
+@RoutePage()
 class PassSuccessPage extends StatelessWidget {
   const PassSuccessPage({super.key});
 

@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/core/config/routes/app_router.gr.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
 import 'package:travel_app/features/auth/presentation/cubit/reset_pass/reset_pass_cubit.dart';
@@ -8,6 +10,8 @@ import 'package:travel_app/features/widgets/back_btn.dart';
 import 'package:travel_app/features/widgets/custom_elevated_btn.dart';
 import 'package:travel_app/features/widgets/custom_text_field.dart';
 
+
+@RoutePage()
 class ResetPassPage extends StatelessWidget {
   const ResetPassPage({super.key});
 
@@ -77,10 +81,7 @@ class ResetPassPage extends StatelessWidget {
                           debugPrint(state.toString());
 
                           Future.delayed(const Duration(seconds: 3), () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LoginPage()));
+                            context.router.push(const LoginRoute());
                           });
                         } else if (state is ResetPassError) {
                           debugPrint(state.toString().toUpperCase());

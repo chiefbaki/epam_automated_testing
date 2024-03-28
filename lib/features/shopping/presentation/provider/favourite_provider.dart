@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FavouriteProvider extends ChangeNotifier {
+class ShoppingProvider extends ChangeNotifier {
   bool isVisibleOne = true;
   bool isVisibleTwo = false;
 
@@ -9,4 +9,6 @@ class FavouriteProvider extends ChangeNotifier {
     isVisibleTwo = !isVisibleTwo;
     notifyListeners();
   }
+
+  List<String> basket = [];
 }

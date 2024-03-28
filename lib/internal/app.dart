@@ -7,8 +7,8 @@ import 'package:travel_app/features/auth/data/repositories/firebase_services.dar
 import 'package:travel_app/features/auth/presentation/cubit/reset_pass/reset_pass_cubit.dart';
 import 'package:travel_app/features/auth/presentation/cubit/sign_in/sign_in_cubit.dart';
 import 'package:travel_app/features/auth/presentation/cubit/sign_up/cubit/sign_up_cubit.dart';
+import 'package:travel_app/features/favourite/presentation/provider/favorite_provider.dart';
 import 'package:travel_app/features/shopping/presentation/provider/favourite_provider.dart';
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -38,8 +38,11 @@ class MyApp extends StatelessWidget {
                     RepositoryProvider.of<FirebaseServise>(context)),
           ),
         ],
-        child: ChangeNotifierProvider(
-          create: (context) => FavouriteProvider(),
+        child: MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (context) => ShoppingProvider()),
+            ChangeNotifierProvider(create: (context) => FavouriteProvider()),
+          ],
           child: MaterialApp.router(
             routerConfig: AppRouter().config(),
             debugShowCheckedModeBanner: false,
@@ -50,7 +53,6 @@ class MyApp extends StatelessWidget {
               appBarTheme: const AppBarTheme(color: AppColors.scaffoldBgColor),
             ),
             // home: const CustomBottomNavBar(title: "Home",),
-            
           ),
         ),
       ),

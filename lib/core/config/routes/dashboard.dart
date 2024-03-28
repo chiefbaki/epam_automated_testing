@@ -6,16 +6,17 @@ import 'package:travel_app/core/config/routes/app_router.gr.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/utils/resources/resources.dart';
 
-class CustomBottomNavBar extends StatefulWidget {
-  const CustomBottomNavBar({
+@RoutePage()
+class DashboardPage extends StatefulWidget {
+  const DashboardPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
+  State<DashboardPage> createState() => _DashboardPageState();
 }
 
-class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+class _DashboardPageState extends State<DashboardPage> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {

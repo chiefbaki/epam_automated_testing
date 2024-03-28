@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
+import 'package:travel_app/features/favourite/presentation/provider/favorite_provider.dart';
+import 'package:travel_app/features/shopping/data/headphones_model.dart';
 
 class CategoryItem extends StatefulWidget {
   final String name;
   final String model;
   final String price;
   final String img;
-  const CategoryItem({
-    super.key,
-    required this.name,
-    required this.model,
-    required this.price,
-    required this.img,
-  });
+  final String id;
+
+  const CategoryItem(
+      {super.key,
+      required this.name,
+      required this.model,
+      required this.price,
+      required this.img,
+      required this.id});
 
   @override
   State<CategoryItem> createState() => _CategoryItemState();
@@ -23,6 +28,13 @@ class _CategoryItemState extends State<CategoryItem> {
   bool isTapped = false;
   @override
   Widget build(BuildContext context) {
+    final vm = Provider.of<FavouriteProvider>(context);
+    final HeadPhonesModel element = HeadPhonesModel(
+        id: widget.id,
+        model: widget.model,
+        name: widget.name,
+        price: widget.price,
+        img: widget.img);
     return Container(
       width: 160,
       height: MediaQuery.of(context).size.height * 0.188,
@@ -89,9 +101,13 @@ class _CategoryItemState extends State<CategoryItem> {
                     onPressed: () {
                       isTapped = !isTapped;
                       setState(() {});
+                      vm.addProduct(element);
+                      print(element.name);
                     },
                     icon: Icon(
-                      isTapped ? Icons.favorite : Icons.favorite_border,
+                      vm.isExist(element)
+                          ? Icons.favorite
+                          : Icons.favorite_border,
                       size: 13,
                     )),
               ],

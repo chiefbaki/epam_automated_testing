@@ -76,7 +76,8 @@ class _ShoppingPageState extends State<ShoppingPage> {
       Images.product5,
       Images.product6
     ];
-    final vm = Provider.of<FavouriteProvider>(context);
+    final vm = Provider.of<ShoppingProvider>(context);
+    
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -165,7 +166,9 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                       crossAxisSpacing: 12,
                                       mainAxisSpacing: 10),
                               itemBuilder: (context, index) {
+                                
                                 return CategoryItem(
+                                  id: HeadPhonesModel.models[index].id ?? "",
                                     img:
                                         HeadPhonesModel.models[index].img ?? "",
                                     name: HeadPhonesModel.models[index].name ??

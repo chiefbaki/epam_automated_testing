@@ -20,7 +20,7 @@ class ItemCard extends StatefulWidget {
 class _ItemCardState extends State<ItemCard> {
   @override
   Widget build(BuildContext context) {
-    final vm = Provider.of<FavouriteProvider>(context);
+    final vm = Provider.of<ShoppingProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(

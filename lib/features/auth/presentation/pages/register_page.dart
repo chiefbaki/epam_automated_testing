@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:travel_app/core/config/routes/app_router.gr.dart';
 import 'package:travel_app/core/config/themes/app_colors.dart';
 import 'package:travel_app/core/config/themes/app_fonts.dart';
 import 'package:travel_app/core/utils/consts/consts.dart';
@@ -8,11 +10,11 @@ import 'package:travel_app/features/auth/presentation/cubit/sign_up/cubit/sign_u
 import 'package:travel_app/features/auth/presentation/pages/login_page.dart';
 import 'package:travel_app/features/auth/presentation/pages/reset_pass_page.dart';
 import 'package:travel_app/features/widgets/back_btn.dart';
-import 'package:travel_app/features/widgets/custom_bottomnav.dart';
 import 'package:travel_app/features/widgets/custom_elevated_btn.dart';
 import 'package:travel_app/features/widgets/custom_text_btn.dart';
 import 'package:travel_app/features/widgets/custom_text_field.dart';
 
+@RoutePage()
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
@@ -50,8 +52,7 @@ class _RegisterPageState extends State<RegisterPage> {
         lastName.text.isNotEmpty &&
         password.text.isNotEmpty &&
         confirmPassword.text.isNotEmpty) {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const CustomBottomNavBar()));
+      context.router.push(const DashboardRoute());
     }
   }
 
@@ -104,7 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ],
                       ),
                       const Text(
-                        "Login",
+                        "Sign up",
                         style: AppFonts.s18w700,
                       ),
                       BlocListener<SignUpCubit, SignUpState>(
@@ -113,11 +114,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             debugPrint(state.toString());
                           } else if (state is SignUpSuccess) {
                             debugPrint(state.toString());
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const CustomBottomNavBar()));
+
+                            context.router.push(const DashboardRoute());
                           } else if (state is SignUpError) {
                             debugPrint(state.toString());
                           }
